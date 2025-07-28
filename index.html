@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAH ICT Department</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="nah.jpg" alt="NAH Logo">
+                <h1>NAH ICT Department</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Empowering Healthcare Through Technology</h2>
+                <p>Delivering robust and reliable IT solutions for Nairobi Adventist Hospital.</p>
+                <a href="#services" class="btn-primary">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div class="container">
+        <h2>Our Hospital Gallery</h2>
+
+        <div class="slider-container">
+            <div class="slider-images">
+                <img src="Nairobi Adventist Hospital.jpg">
+                <img src="nahh2.jpg">
+                <img src="nahh3.jpg">
+                <img src="nahh4.jpg">
+                <img src="nahh5.jpg">
+                <img src="nahh6.jpg">
+            </div>
+
+            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+            <div class="slider-dots">
+                </div>
+        </div>
+    </div>
+    </section>
+
+    <script>
+        // This is the JavaScript for the slider functionality
+        const sliderImages = document.querySelector('.slider-images');
+        const images = document.querySelectorAll('.slider-images img');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const sliderDotsContainer = document.querySelector('.slider-dots');
+
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        // --- Create Dots Dynamically ---
+        function createDots() {
+            for (let i = 0; i < totalImages; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) {
+                    dot.classList.add('active');
+                }
+                dot.dataset.index = i; // Store index for direct navigation
+                dot.addEventListener('click', () => {
+                    goToSlide(parseInt(dot.dataset.index));
+                });
+                sliderDotsContainer.appendChild(dot);
+            }
+        }
+
+        // --- Update Active Dot ---
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // --- Go to Specific Slide ---
+        function goToSlide(index) {
+            currentIndex = index;
+            // Handle loop: if index goes out of bounds, loop back
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalImages - 1;
+            }
+
+            const offset = -currentIndex * 100; // Calculate percentage to slide
+            sliderImages.style.transform = `translateX(${offset}%)`;
+            updateDots();
+        }
+
+        // --- Event Listeners for Buttons ---
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+
+        // --- Optional: Auto-play ---
+        let autoPlayInterval;
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000); // Change image every 5 seconds
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Pause autoplay on hover (good user experience)
+        sliderImages.addEventListener('mouseenter', stopAutoPlay);
+        sliderImages.addEventListener('mouseleave', startAutoPlay);
+
+
+        // --- Initialize Slider ---
+        document.addEventListener('DOMContentLoaded', () => {
+            createDots(); // Create dots when page loads
+            goToSlide(0); // Ensure first slide is shown
+            startAutoPlay(); // Start autoplay
+        });
+
+    </script>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Core Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Management</h3>
+                    <p>Ensuring secure and efficient network infrastructure for seamless hospital operations.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Software Support</h3>
+                    <p>Providing expert assistance and maintenance for all hospital software systems.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Data Security</h3>
+                    <p>Protecting sensitive patient data with cutting-edge cybersecurity measures.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-server"></i>
+                    <h3>Server & Infrastructure</h3>
+                    <p>Managing and optimizing server performance and IT infrastructure.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>IT Helpdesk</h3>
+                    <p>Responsive support for all your IT queries and technical issues.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>System Integration</h3>
+                    <p>Seamlessly integrating various hospital systems for improved efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Our Department</h2>
+            <div class="about-content">
+                <p>The <b>Nairobi Adventist Hospital ICT Department</b> is dedicated to leveraging technology to enhance patient care, streamline operations, and ensure the smooth functioning of all digital systems within the hospital. We are a team of skilled professionals committed to providing reliable, secure, and innovative IT solutions tailored to the unique needs of a modern healthcare facility.</p>
+                <p>Our <b>mission</b> is to support the hospital's goals through advanced technological infrastructure and proactive IT management, ensuring that both staff and patients benefit from a robust and efficient digital environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2>Meet Our Expert Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=Jane+D." alt="Tyson Mukure - Head of ICT">
+                    <h3>Tyson Mukure</h3>
+                    <p class="role">Head of ICT Department</p>
+                    <p class="bio">With over 15 years of experience, Tyson leads our department in strategic technological advancement and innovation for healthcare systems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=John+S." alt="Aruah Brian">
+                    <h3>Aruah Brian</h3>
+                    <p class="role">Member of ICT team</p>
+                    <p class="bio">Brian ensures our network infrastructure is robust, secure, and always operational, supporting seamless communication hospital-wide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=Alice+K." alt="Abraham Michira.">
+                    <h3>Abraham Michira</h3>
+                    <p class="role">Member of ICT team</p>
+                    <p class="bio">Abraham specializes in developing and maintaining our critical hospital management systems and custom software solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150/007bff/ffffff?text=David+M." alt="Beyonce Kemunto">
+                    <h3>Beyonce Migiro</h3>
+                    <p class="role">Member of ICT team</p>
+                    <p class="bio">Beyonce is dedicated to safeguarding patient data and hospital systems against cyber threats, implementing best-in-class security protocols.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi Adventist Hospital, RedHill-Limuru Road, Nairobi, Kenya</p>
+                <p><i class="fas fa-phone-alt"></i> +254 789 289 000</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ict@nairobiadventisthospital.org">ict@nairobiadventisthospital.org</a></p>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+                <p>Thank you for getting in touch with the NAH ICT team.</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nairobi Adventist Hospital ICT Department. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1633 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Light off-white for background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Colors */
+:root {
+    --primary-blue: #007bff; /* NAH Blue */
+    --dark-blue: #0056b3;
+    --light-blue: #e0f2f7; /* Very light blue */
+    --accent-green: #28a745; /* Light green accent */
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-blue);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://www.transparenttextures.com/patterns/circuit-board.png'); /* Abstract circuit board pattern */
+    background-size: cover;
+    color: var(--text-light);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Make it a bit taller */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay for circuit pattern if not using background-image */
+/* .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+    opacity: 0.15; /* Adjust opacity for subtlety */
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above background pattern */
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green */
+    transform: translateY(-2px);
+}
+
+/* Sections General Styling */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light-blue); /* Light blue background for alternate sections */
+}
+
+h2 {
+    font-size: 2.8em;
+    color: var(--dark-blue);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-green);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-item i {
+    font-size: 3.5em;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8em;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* About Section */
+.about-section {
+    text-align: left;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #444;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.about-content strong {
+    color: var(--dark-blue);
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--light-blue);
+}
+
+.contact-info {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: var(--accent-green);
+    font-size: 1.3em;
+}
+
+.contact-info a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--dark-blue);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--text-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    text-align: left;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-blue);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .service-item h3 {
+        font-size: 1.5em;
+    }
+
+    .service-item p {
+        font-size: 0.95em;
+    }
+}
+/* Team Section */
+.team-section {
+    background-color: var(--f4f7f6); /* Light off-white for background */
+    padding-bottom: 100px; /* Adjust padding as needed */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-blue);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.team-member h3 {
+    font-size: 1.9em;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+}
+
+.team-member .role {
+    font-size: 1.1em;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.team-member .bio {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows bios of different lengths to push social links to the bottom */
+}
+
+.social-links {
+    margin-top: auto; /* Pushes social links to the bottom of the card */
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--primary-blue);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-green);
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments for Team Section */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Stack members on smaller screens */
+    }
+}
+a:hover .fa-facebook-f {
+  color: #1877F2; /* Facebook blue */
+}
+
+a:hover .fa-twitter {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+a:hover .fa-linkedin-in {
+  color: #0A66C2; /* LinkedIn blue */
+}
+
+a:hover .fa-instagram {
+  color: #E4405F; /* Instagram red/pink */
+}
+
+a:hover .fa-telegram-plane {
+  color: #2CA5E0; /* Telegram blue */
+}
+
+a:hover .fa-github {
+  color: #F1502F; /* Git orange */
+}
+
+a:hover .fa-youtube {
+  color: #FF0000; /* YouTube red */
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Careers page */
+
+/* Careers Hero Section */
+.careers-hero {
+    /* Override hero background with a slightly different tech pattern or color */
+    background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 123, 255, 0.7)), url('https://www.transparenttextures.com/patterns/cubes.png'); /* Another tech-like pattern */
+    background-size: cover;
+    min-height: 50vh; /* Slightly shorter hero than homepage */
+}
+
+/* Current Openings Section */
+.current-openings-section {
+    background-color: var(--light-blue); /* Use the light blue for this section */
+    padding-bottom: 100px;
+}
+
+.job-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.job-listing {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-listing:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.job-listing h3 {
+    font-size: 1.8em;
+    color: var(--dark-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.job-listing .location,
+.job-listing .type {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.job-listing .location i,
+.job-listing .type i {
+    margin-right: 8px;
+    color: var(--accent-green);
+}
+
+.job-listing .description {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Ensures consistent alignment of buttons */
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid var(--primary-blue);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content; /* Make button only as wide as its content */
+    margin-top: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* Job Details (hidden by default) */
+.job-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.job-details.show-details {
+    max-height: 500px; /* Adjust based on expected content height */
+    opacity: 1;
+    transition: max-height 0.7s ease-in, opacity 0.7s ease-in;
+}
+
+.job-details h4 {
+    color: var(--dark-blue);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.job-details ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.job-details ul li {
+    background-color: var(--light-blue);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.job-details .apply-btn {
+    width: auto; /* Override btn-primary full width */
+    margin-top: 0;
+}
+
+.no-openings-message {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Responsive Design for Careers Page */
+@media (max-width: 768px) {
+    .job-listings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .careers-hero h2 {
+        font-size: 2.2em;
+    }
+    .careers-hero p {
+        font-size: 1.1em;
+    }
+    .job-listing h3 {
+        font-size: 1.6em;
+    }
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Blogs page */
+
+/* Blog Hero Section */
+.blog-hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://www.transparenttextures.com/patterns/cubes.png'); /* Using a tech pattern */
+    background-size: cover;
+    min-height: 45vh; /* Slightly shorter hero */
+}
+
+/* Blog Content Section Layout */
+.blog-content-section {
+    padding-bottom: 100px;
+    background-color: var(--f4f7f6); /* Light off-white background */
+}
+
+.blog-layout {
+    display: flex;
+    gap: 40px; /* Space between main content and sidebar */
+    align-items: flex-start; /* Align items to the top */
+    text-align: left; /* Reset text alignment for content */
+}
+
+.main-blog-posts {
+    flex: 3; /* Main content takes more space */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for posts */
+    gap: 30px;
+}
+
+.blog-sidebar {
+    flex: 1; /* Sidebar takes less space */
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    position: sticky; /* Makes sidebar sticky as you scroll */
+    top: 20px; /* Distance from the top of the viewport */
+    max-height: calc(100vh - 40px); /* Limit height to viewport */
+    overflow-y: auto; /* Enable scrolling if content is too long */
+}
+
+/* Blog Post Card Styling */
+.blog-post {
+    background-color: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    overflow: hidden; /* Ensures image corners are rounded with the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post .post-meta {
+    font-size: 0.9em;
+    color: #777;
+    padding: 15px 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post .post-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.blog-post .post-meta i {
+    margin-right: 5px;
+    color: var(--accent-green);
+}
+
+.blog-post h3 {
+    font-size: 1.6em;
+    color: var(--dark-blue);
+    margin: 15px 20px 10px;
+    line-height: 1.3;
+}
+
+.blog-post p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.blog-post .read-more-btn {
+    margin: 0 20px 20px;
+    align-self: flex-start; /* Aligns button to the left within the card */
+}
+
+/* Sidebar Widget Styling */
+.sidebar-widget {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-widget h4 {
+    font-size: 1.5em;
+    color: var(--dark-blue);
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sidebar-widget h4::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-green);
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-widget ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-widget ul li a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    display: block; /* Makes the whole list item clickable */
+    padding: 5px 0;
+}
+
+.sidebar-widget ul li a:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+
+.sidebar-widget ul li a span {
+    color: #777; /* Count color */
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-box button {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: var(--dark-blue);
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-cloud a {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag-cloud a:hover {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+/* Responsive Design for Blogs Page */
+@media (max-width: 992px) {
+    .blog-layout {
+        flex-direction: column; /* Stack main content and sidebar */
+    }
+
+    .main-blog-posts {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust grid for stacked layout */
+    }
+
+    .blog-sidebar {
+        position: static; /* Remove sticky behavior when stacked */
+        max-height: none;
+        overflow-y: visible;
+        width: 100%; /* Take full width */
+        margin-top: 40px; /* Space between posts and sidebar */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-hero h2 {
+        font-size: 2.5em;
+    }
+    .blog-hero p {
+        font-size: 1.2em;
+    }
+    .main-blog-posts {
+        grid-template-columns: 1fr; /* Single column on smaller mobiles */
+    }
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Projects page */
+
+/* Projects Hero Section */
+.projects-hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://www.transparenttextures.com/patterns/circuit-board.png'); /* Consistent tech pattern */
+    background-size: cover;
+    min-height: 45vh; /* Slightly shorter hero */
+}
+
+/* Project Showcase Section */
+.project-showcase-section {
+    padding-bottom: 100px;
+    background-color: var(--f4f7f6); /* Light off-white background */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.project-card {
+    background-color: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    overflow: hidden; /* Ensures image corners are rounded with the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-card .card-content {
+    padding: 25px;
+    flex-grow: 1; /* Allows content to fill space and push button down */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-size: 1.7em;
+    color: var(--dark-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes the button to the bottom if descriptions vary */
+}
+
+.project-card .btn-secondary {
+    align-self: flex-start; /* Align button to the left */
+    margin-top: auto; /* Push button to the bottom */
+    padding: 10px 20px;
+    font-size: 0.95em;
+}
+
+.project-card .btn-secondary i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card .btn-secondary:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design for Projects Page */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-hero h2 {
+        font-size: 2.5em;
+    }
+    .projects-hero p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-hero h2 {
+        font-size: 2.2em;
+    }
+    .projects-hero p {
+        font-size: 1.1em;
+    }
+    .project-card h3 {
+        font-size: 1.5em;
+    }
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Testimonials page */
+
+/* Testimonials Hero Section */
+.testimonials-hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.6)), url('https://www.transparenttextures.com/patterns/cubes.png'); /* Tech pattern */
+    background-size: cover;
+    min-height: 45vh; /* Slightly shorter hero */
+}
+
+/* Testimonials Grid Section */
+.testimonials-grid-section {
+    padding-bottom: 100px;
+    background-color: var(--f4f7f6); /* Light off-white background */
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card .quote-icon {
+    font-size: 3em;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    opacity: 0.2; /* Make it subtle */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.testimonial-card .quote {
+    font-size: 1.15em;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    padding-top: 30px; /* Space for the quote icon */
+}
+
+.testimonial-card .author-info {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Push to bottom */
+    width: 100%;
+    justify-content: center;
+}
+
+.testimonial-card .author-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--accent-green);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.testimonial-card .author-name {
+    font-size: 1.2em;
+    color: var(--dark-blue);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.testimonial-card .author-title {
+    font-size: 0.95em;
+    color: #777;
+}
+
+/* Responsive Design for Testimonials Page */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonials-hero h2 {
+        font-size: 2.5em;
+    }
+    .testimonials-hero p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-hero h2 {
+        font-size: 2.2em;
+    }
+    .testimonials-hero p {
+        font-size: 1.1em;
+    }
+    .testimonial-card .quote {
+        font-size: 1.05em;
+    }
+    .testimonial-card .author-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    .testimonial-card .author-info img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Project Details page */
+
+/* Project Details Hero Section */
+.project-details-hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 123, 255, 0.7)), url('https://www.transparenttextures.com/patterns/cubes.png'); /* Another tech-like pattern */
+    background-size: cover;
+    min-height: 40vh; /* Slightly shorter hero */
+}
+
+/* Detailed Projects Section */
+.detailed-projects-section {
+    padding-bottom: 100px;
+    background-color: var(--f4f7f6); /* Light off-white background */
+}
+
+.project-detail-block {
+    background-color: var(--text-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    margin-bottom: 60px; /* Space between each project detail */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-detail-block:last-child {
+    margin-bottom: 0; /* No margin after the last block */
+}
+
+.project-detail-block img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.project-detail-block h3 {
+    font-size: 2.5em;
+    color: var(--dark-blue);
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center; /* Center the main project title */
+}
+
+.project-detail-block p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.project-detail-block h4 {
+    font-size: 1.8em;
+    color: var(--primary-blue);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.project-detail-block h4::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-green);
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.project-detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.project-detail-block ul li {
+    background-color: var(--light-blue);
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.project-detail-block ul li i {
+    margin-right: 10px;
+    color: var(--accent-green);
+    font-size: 1.1em;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.tech-tags span {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.tech-tags span i {
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.back-to-projects {
+    align-self: center; /* Center the button within the block */
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+/* Responsive Design for Project Details Page */
+@media (max-width: 992px) {
+    .project-detail-block {
+        padding: 30px;
+    }
+    .project-detail-block h3 {
+        font-size: 2em;
+    }
+    .project-detail-block h4 {
+        font-size: 1.6em;
+    }
+    .project-detail-block p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-details-hero h2 {
+        font-size: 2.5em;
+    }
+    .project-details-hero p {
+        font-size: 1.2em;
+    }
+    .project-detail-block {
+        padding: 20px;
+    }
+    .project-detail-block h3 {
+        font-size: 1.8em;
+    }
+    .project-detail-block h4 {
+        font-size: 1.4em;
+    }
+    .tech-tags {
+        justify-content: center; /* Center tags on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-details-hero h2 {
+        font-size: 2em;
+    }
+    .project-details-hero p {
+        font-size: 1em;
+    }
+    .project-detail-block h3 {
+        font-size: 1.6em;
+    }
+    .project-detail-block ul li {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .back-to-projects {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+/* Import the main style.css for global consistency */
+@import url('style.css');
+
+/* Specific overrides/additions for the Blog Post Details page */
+
+/* Blog Post Hero Section */
+.blog-post-hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 123, 255, 0.7)), url('https://www.transparenttextures.com/patterns/cubes.png'); /* Consistent tech pattern */
+    background-size: cover;
+    min-height: 40vh; /* Slightly shorter hero */
+}
+
+/* Detailed Blog Posts Section */
+.detailed-blog-posts-section {
+    padding-bottom: 100px;
+    background-color: var(--f4f7f6); /* Light off-white background */
+}
+
+.blog-post-detail-block {
+    background-color: var(--text-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    margin-bottom: 60px; /* Space between each blog post detail */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-detail-block:last-child {
+    margin-bottom: 0; /* No margin after the last block */
+}
+
+.blog-post-detail-block img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.blog-post-detail-block .post-meta {
+    font-size: 0.95em;
+    color: #777;
+    padding: 0; /* Already handled by padding of parent block */
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.blog-post-detail-block .post-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.blog-post-detail-block .post-meta i {
+    margin-right: 8px;
+    color: var(--accent-green);
+    font-size: 1em;
+}
+
+.blog-post-detail-block h3 {
+    font-size: 2.5em;
+    color: var(--dark-blue);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center; /* Center the main blog post title */
+}
+
+.blog-post-detail-block h4 {
+    font-size: 1.8em;
+    color: var(--primary-blue);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.blog-post-detail-block h4::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-green);
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.blog-post-detail-block p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.blog-post-detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.blog-post-detail-block ul li {
+    background-color: var(--light-blue);
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    align-items: flex-start; /* Align icon to top of text */
+}
+
+.blog-post-detail-block ul li i {
+    margin-right: 10px;
+    color: var(--accent-green);
+    font-size: 1.1em;
+    margin-top: 3px; /* Adjust icon vertical alignment */
+}
+
+.back-to-blogs {
+    align-self: center; /* Center the button within the block */
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+/* Responsive Design for Blog Post Details Page */
+@media (max-width: 992px) {
+    .blog-post-detail-block {
+        padding: 30px;
+    }
+    .blog-post-detail-block h3 {
+        font-size: 2em;
+    }
+    .blog-post-detail-block h4 {
+        font-size: 1.6em;
+    }
+    .blog-post-detail-block p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-post-hero h2 {
+        font-size: 2.5em;
+    }
+    .blog-post-hero p {
+        font-size: 1.2em;
+    }
+    .blog-post-detail-block {
+        padding: 20px;
+    }
+    .blog-post-detail-block h3 {
+        font-size: 1.8em;
+    }
+    .blog-post-detail-block h4 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-post-hero h2 {
+        font-size: 2em;
+    }
+    .blog-post-hero p {
+        font-size: 1em;
+    }
+    .blog-post-detail-block h3 {
+        font-size: 1.6em;
+    }
+    .blog-post-detail-block ul li {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .back-to-blogs {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+/* --- Slider Specific CSS --- */
+        .slider-container {
+            position: relative;
+            width: 800px; /* Fixed width for the slider viewport */
+            height: 450px; /* Fixed height for the slider viewport */
+            margin: 50px auto;
+            overflow: hidden; /* Crucial: Hides images outside the current view */
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+        }
+
+        .slider-images {
+            display: flex; /* Arranges images in a row */
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+        }
+
+        .slider-images img {
+            width: 100%; /* Each image takes full width of slider-container */
+            height: 100%;
+            object-fit: cover; /* Ensures images fill the space without distortion */
+            flex-shrink: 0; /* Prevents images from shrinking */
+            border-radius: 10px; /* Match container border-radius */
+        }
+
+        /* --- Navigation Buttons --- */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 123, 255, 0.7); /* Blue with some transparency */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 10; /* Ensure buttons are above images */
+        }
+
+        .slider-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .prev-btn {
+            left: 15px;
+        }
+
+        .next-btn {
+            right: 15px;
+        }
+
+        /* --- Dot Indicators (Optional) --- */
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 1px solid rgba(0, 123, 255, 0.5);
+        }
+
+        .dot.active {
+            background-color: #007bff; /* Active dot color */
+            transform: scale(1.2);
+            border-color: #0056b3;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .slider-container {
+                width: 90%; /* Make slider responsive */
+                height: 350px;
+            }
+            .slider-btn {
+                padding: 10px 15px;
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .slider-container {
+                height: 250px;
+            }
+            .slider-btn {
+                padding: 8px 12px;
+                font-size: 1.2em;
+            }
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
